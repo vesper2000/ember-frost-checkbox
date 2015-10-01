@@ -1,0 +1,39 @@
+.frost-checkbox {
+	display: inline-block;
+	position: relative;
+
+	.input {
+		display: none;
+	}
+
+	.label::before {
+	  display: inline-block;
+	  position: relative;
+	  width: 20px;
+	  height: 20px;
+	  @include linear-gradient(white, $frost-color-lgrey-5);
+	  margin-right: 5px;
+	  border: 1px solid $frost-color-grey-6;
+	  vertical-align: middle;
+	  color: $frost-color-blue-1;
+	  content: "";
+	}
+
+	.label.label:hover::before{
+		background-color: $frost-color__hover_blue;  //FIXME Not $frost-color-x convention
+	}
+
+
+	.input:checked + .label::before {
+		content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><polygon fill='%23009EEF' points='13,4 15,6 7,14 3,10 5,8 7,10'/></svg>");
+	}
+
+	.label {
+		display: inline-block;
+		position: relative;
+		font-size: $frost-font-size-1;
+		font-weight: bold;
+		color: $frost-color-grey-5;
+		@include user-select(none);
+	}
+}
