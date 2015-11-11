@@ -25,7 +25,11 @@
 
 
 	.input:checked + .label::before {
-		content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><polygon fill='%23009EEF' points='13,4 15,6 7,14 3,10 5,8 7,10'/></svg>");
+		content: url("data:image/svg+xml;utf8,
+	 		<svg xmlns='http://www.w3.org/2000/svg' viewBox='3 2 31 31'>
+	 			<rect xmlns='http://www.w3.org/2000/svg'  x='10.7' y='15.3' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 35.6974 26.188)' fill='%23009EEF' width='3.5' height='10.3'/>
+				<polygon xmlns='http://www.w3.org/2000/svg'  fill='%23009EEF' points='14.9,25.4 12.4,22.9 26.2,9.4 28.7,12.1'/>
+	  		</svg>");
 	}
 
 	.label {
