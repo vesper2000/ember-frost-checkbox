@@ -40,7 +40,8 @@
     "ember-cli-notifications": "2.1.1",
     "ember-lodash": "0.0.5",
     "ember-truth-helpers": "1.1.0",
-    "liquid-fire": "0.21.2"
+    "liquid-fire": "0.21.2",
+	"frost-tabs" : "2.0.2"
   },
   "keywords": [
     "ember-addon"
