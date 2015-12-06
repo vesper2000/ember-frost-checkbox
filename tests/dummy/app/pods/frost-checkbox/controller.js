@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
 			});
 		},
 		tabSelected(tab) {
-			this.set(’selectedTab', tab);
+			this.set('selectedTab', tab);
 		}
 	}
 });

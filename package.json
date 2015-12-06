@@ -53,7 +53,7 @@
     "broccoli-merge-trees": "0.2.3",
     "broccoli-sass": "0.6.6",
     "ember-cli-htmlbars": "0.7.9",
-    "frost-css": "^1.0.12"
+    "frost-css": "~1.0.12"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
