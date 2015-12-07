@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.route('frost-checkbox', { path: '/' });
+	this.route('demo', { path: '/' });
 });
 
 export default Router;

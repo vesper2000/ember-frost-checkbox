@@ -13,8 +13,10 @@ export default Ember.Component.extend({
 			return true;
 		}
 
-		event.preventDefault();
-		event.stopPropagation();
+		if (!this.get('propagate')) {
+			event.preventDefault();
+			event.stopPropagation();
+		}
 
 		let checked = this.toggleProperty("checked");
 

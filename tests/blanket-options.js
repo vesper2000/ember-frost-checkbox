@@ -1,8 +1,8 @@
 /* globals blanket, module */
 
 var options = {
-  modulePrefix: 'frost-checkbox',
-  filter: '//.*frost-checkbox/.*/',
+  modulePrefix: 'frost-button',
+  filter: '//.*frost-button/.*/',
   antifilter: '//.*(tests|template).*/',
   loaderExclusions: [],
   enableCoverage: true,
@@ -11,7 +11,6 @@ var options = {
     autostart: true
   }
 };
-
 if (typeof exports === 'undefined') {
   blanket.options(options);
 } else {
