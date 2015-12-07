@@ -41,7 +41,7 @@ module.exports = function(environment) {
 	}
 
 	if (environment === 'production') {
-
+		ENV.baseURL = '/pages/NMS_FROST/frost-checkbox/gh-pages/browse';
 	}
 
 	return ENV;

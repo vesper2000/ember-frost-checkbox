@@ -17,6 +17,9 @@ export default Ember.Controller.extend({
 				autoClear: true,
 				clearDuration: 2000
 			});
+		},
+		tabSelected(tab) {
+			this.set('selectedTab', tab);
 		}
 	}
 });
