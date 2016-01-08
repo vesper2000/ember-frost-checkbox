@@ -36,8 +36,7 @@
 		display: inline-block;
 		position: relative;
 		font-size: $frost-font-size-1;
-		font-weight: bold;
-		color: $frost-color-grey-5;
+		color: $frost-color-grey-3;
 		@include user-select(none);
 	}
 }
