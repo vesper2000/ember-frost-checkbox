@@ -1,13 +1,22 @@
 /* globals blanket, module */
 
 var options = {
-  modulePrefix: 'frost-button',
-  filter: '//.*frost-button/.*/',
+  modulePrefix: 'frost-checkbox',
+  filter: '//.*frost-checkbox/.*/',
   antifilter: '//.*(tests|template).*/',
   loaderExclusions: [],
   enableCoverage: true,
   cliOptions: {
-    reporters: ['json'],
+    jsonOptions: {
+      outputFile: 'coverage/coverage.json'
+    },
+    teamcityOptions: {
+      outputFile: 'coverage/teamcity.txt'
+    },
+    lcovOptions: {
+      outputFile: 'coverage/lcov.info'
+    },
+    reporters: ['teamcity', 'json', 'lcov'],
     autostart: true
   }
 };
