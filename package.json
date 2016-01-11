@@ -7,11 +7,14 @@
     "test": "tests"
   },
   "scripts": {
+    "check-version-bump": "fr-bump check BP_FROST frost-button",
+    "prefr-publish": "fr-bump BP_FROST frost-button",
+    "fr-publish": "npm publish .",
     "start": "ember server",
     "build": "ember build",
-    "test": "ember try:testall"
+    "test": "ember test"
   },
-  "repository": "https://stash.ciena.com/scm/nms_frost/frost-checkbox.git",
+  "repository": "ssh://git@bitbucket.ciena.com/BP_FROST/frost-checkbox.git",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -40,6 +43,7 @@
     "ember-lodash": "^0.0.6",
     "ember-truth-helpers": "^1.2.0",
     "ember-try": "~0.0.8",
+    "fr-cli-bump": "^0.6.3",
     "frost-tabs": "~2.1.0"
   },
   "keywords": [
@@ -55,6 +59,6 @@
     "configPath": "tests/dummy/config"
   },
   "publishConfig": {
-    "registry": "https://artifactory.ciena.com/api/npm/icebreaker-npm"
+    "registry": "https://artifactory.ciena.com/api/npm/blueplanet-npm"
   }
 }
