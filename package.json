@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "check-version-bump": "fr-bump check BP_FROST frost-button",
-    "prefr-publish": "fr-bump BP_FROST frost-button",
+    "check-version-bump": "fr-bump check BP_FROST frost-checkbox",
+    "prefr-publish": "fr-bump BP_FROST frost-checkbox",
     "fr-publish": "npm publish .",
     "start": "ember server",
     "build": "ember build",
