@@ -3,8 +3,15 @@
 	position: relative;
 
 	.input {
-		display: none;
+      position: absolute;
+      top: 5px;
+      left: 5px;
 	}
+
+    .input:focus + .label::before {
+      border: 1px solid darken($frost-color-grey-6, 5%);
+      @include linear-gradient(lighten($frost-color-blue-1, 50%), lighten($frost-color-blue-1, 45%));
+    }
 
 	.label::before {
 	  display: inline-block;
@@ -13,7 +20,7 @@
 	  height: 20px;
 	  @include linear-gradient(white, $frost-color-lgrey-5);
 	  margin-right: 5px;
-	  border: 1px solid $frost-color-lgrey-1;
+	  border: 1px solid $frost-color-grey-6;
 	  vertical-align: middle;
 	  color: $frost-color-blue-1;
 	  content: "";
@@ -36,7 +43,8 @@
 		display: inline-block;
 		position: relative;
 		font-size: $frost-font-size-1;
-		color: $frost-color-grey-3;
+		font-weight: bold;
+		color: $frost-color-grey-5;
 		@include user-select(none);
 	}
 }

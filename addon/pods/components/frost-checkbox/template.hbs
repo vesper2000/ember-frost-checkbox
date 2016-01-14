@@ -1,8 +1,11 @@
-<input type="checkbox" id="{{id}}_input" class="input"
-			 autofocus={{autofocus}}
-			 checked={{checked}}
-			 disabled={{disabled}}
-			 name={{name}}
-			 readonly={{readonly}}
->
-<label for="{{id}}_input" class="label">{{yield}}</label>
+{{one-way-input
+    type='checkbox'
+    id=(concat id '_input')
+    class='input'
+    checked=isChecked
+    disabled=disabled
+    name=name
+    readonly=readonly
+    update=(action 'input')
+}}
+<label for='{{id}}_input' class='label'>{{yield}}</label>
