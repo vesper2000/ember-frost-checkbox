@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
 				clearDuration: 2000
 			});
 		},
+
 		value(attrs) {
 			this.notifications.addNotification({
 				message: attrs.id + ' - ' + attrs.value,
@@ -18,6 +19,7 @@ export default Ember.Controller.extend({
 				clearDuration: 2000
 			});
 		},
+
 		tabSelected(tab) {
 			this.set('selectedTab', tab);
 		}

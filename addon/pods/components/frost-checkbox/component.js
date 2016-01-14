@@ -1,28 +1,37 @@
-import Ember from "ember";
-import layout from "./template";
-import _ from "lodash/lodash";
+import Ember from 'ember';
+import layout from './template';
+import _ from 'lodash/lodash';
 
 export default Ember.Component.extend({
-	layout: layout,
-	classNames: ["frost-checkbox"],
+  layout: layout,
+  classNames: ['frost-checkbox'],
 
-	checked: false,
+  didInitAttrs() {
+    this.set('isChecked', this.attrs.checked);
+  },
 
-	onclick: Ember.on("click", function(event) {
-		if (!Ember.ViewUtils.isSimpleClick(event)) {
-			return true;
-		}
+  didInsertElement() {
+    if (this.get('autofocus')) {
+      Ember.run.next('render', () => {
+        this.$('input').focus();
+      });
+    }
+  },
 
-		if (!this.get('propagate')) {
-			event.preventDefault();
-			event.stopPropagation();
-		}
-
-		let checked = this.toggleProperty("checked");
-
-		if (_.isFunction(this.attrs["on-input"])) {
-			let id = this.get("value");
-			this.attrs["on-input"]({id: Ember.isEmpty(id) ? this.get("id") : id, value: checked});
-		}
-	})
+  actions: {
+    input() {
+      let id = this.get('value');
+      if (_.isFunction(this.attrs['on-input'])) {
+        this.attrs['on-input']({
+          id: Ember.isEmpty(id) ? this.get('id') : id,
+          value: this.$('input').prop('checked')
+        });
+      } else {
+        this.sendAction('on-input', {
+          id: Ember.isEmpty(id) ? this.get('id') : id,
+          value: this.$('input').prop('checked')
+        });
+      }
+    }
+  }
 });
