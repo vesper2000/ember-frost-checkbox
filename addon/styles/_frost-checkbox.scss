@@ -20,7 +20,7 @@
 	  height: 20px;
 	  @include linear-gradient(white, $frost-color-lgrey-5);
 	  margin-right: 5px;
-	  border: 1px solid $frost-color-grey-6;
+      border: 1px solid $frost-color-lgrey-1;
 	  vertical-align: middle;
 	  color: $frost-color-blue-1;
 	  content: "";
@@ -29,7 +29,6 @@
 	.label.label:hover::before{
 		background-color: $frost-color__hover_blue;  //FIXME Not $frost-color-x convention
 	}
-
 
 	.input:checked + .label::before {
 		content: url("data:image/svg+xml;utf8,
