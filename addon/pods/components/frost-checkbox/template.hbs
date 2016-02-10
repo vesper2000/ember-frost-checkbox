@@ -1,6 +1,6 @@
 {{one-way-input
     type='checkbox'
-    id=(concat id '_input')
+    id=inputId
     class='input'
     checked=isChecked
     disabled=disabled
@@ -8,4 +8,4 @@
     readonly=readonly
     update=(action 'input')
 }}
-<label for='{{id}}_input' class='label'>{{yield}}</label>
+<label for={{inputId}} class='label'>{{yield}}</label>
