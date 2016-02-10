@@ -8,10 +8,10 @@
       left: 5px;
   }
 
-    .input:focus + .label::before {
-      border: 1px solid darken($frost-color-grey-6, 5%);
-      @include linear-gradient(lighten($frost-color-blue-1, 50%), lighten($frost-color-blue-1, 45%));
-    }
+  .input:focus + .label::before {
+    border: 1px solid darken($frost-color-grey-6, 5%);
+    @include linear-gradient(lighten($frost-color-blue-1, 50%), lighten($frost-color-blue-1, 45%));
+  }
 
   .label::before {
     display: inline-block;
@@ -20,9 +20,8 @@
     height: 20px;
     @include linear-gradient(white, $frost-color-lgrey-5);
     margin-right: 5px;
-      border: 1px solid $frost-color-lgrey-1;
+    border: 1px solid $frost-color-lgrey-1;
     vertical-align: middle;
-    color: $frost-color-blue-1;
     content: "";
   }
 
@@ -30,12 +29,18 @@
     background-color: $frost-color__hover_blue;  //FIXME Not $frost-color-x convention
   }
 
-  .input:checked + .label::before {
-    content: url("data:image/svg+xml;utf8,
-       <svg xmlns='http://www.w3.org/2000/svg' viewBox='3 2 31 31'>
-         <rect xmlns='http://www.w3.org/2000/svg'  x='10.7' y='15.3' transform='matrix(-0.7071 0.7071 -0.7071 -0.7071 35.6974 26.188)' fill='%23009EEF' width='3.5' height='10.3'/>
-        <polygon xmlns='http://www.w3.org/2000/svg'  fill='%23009EEF' points='14.9,25.4 12.4,22.9 26.2,9.4 28.7,12.1'/>
-        </svg>");
+  svg {
+    visibility: hidden;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 1px;
+    fill: $frost-color-blue-1;
+    left: 2px;
+  }
+  
+  .input:checked + .label svg {
+    visibility: visible;
   }
 
   .label {
