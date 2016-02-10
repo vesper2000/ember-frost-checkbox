@@ -19,8 +19,8 @@ export default Ember.Component.extend({
   },
 
   inputId: Ember.computed('id', function () {
-    const id = this.get('id') || this.elementId
-    return `${ id }_input`
+    const id = this.get('id') || this.elementId;
+    return `${ id }_input`;
   }),
 
   actions: {
