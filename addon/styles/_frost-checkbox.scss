@@ -1,34 +1,33 @@
 .frost-checkbox {
-	display: inline-block;
-	position: relative;
+  display: inline-block;
+  position: relative;
 
-	.input {
+  .input {
       position: absolute;
       top: 5px;
       left: 5px;
-	}
+  }
 
-    .input:focus + .label::before {
-      border: 1px solid darken($frost-color-grey-6, 5%);
-      @include linear-gradient(lighten($frost-color-blue-1, 50%), lighten($frost-color-blue-1, 45%));
-    }
+  .input:focus + .label::before {
+    border: 1px solid darken($frost-color-grey-6, 5%);
+    @include linear-gradient(lighten($frost-color-blue-1, 50%), lighten($frost-color-blue-1, 45%));
+  }
 
-	.label::before {
-	  display: inline-block;
-	  position: relative;
-	  width: 20px;
-	  height: 20px;
-	  @include linear-gradient(white, $frost-color-lgrey-5);
-	  margin-right: 5px;
-      border: 1px solid $frost-color-lgrey-1;
-	  vertical-align: middle;
-	  
-	  content: "";
-	}
+  .label::before {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    @include linear-gradient(white, $frost-color-lgrey-5);
+    margin-right: 5px;
+    border: 1px solid $frost-color-lgrey-1;
+    vertical-align: middle;
+    content: "";
+  }
 
-	.label.label:hover::before{
-		background-color: $frost-color__hover_blue;  //FIXME Not $frost-color-x convention
-	}
+  .label.label:hover::before{
+    background-color: $frost-color__hover_blue;  //FIXME Not $frost-color-x convention
+  }
 
   svg {
     visibility: hidden;
@@ -40,15 +39,15 @@
     left: 2px;
   }
   
-	.input:checked + .label svg {
-		visibility: visible;
-	}
+  .input:checked + .label svg {
+    visibility: visible;
+  }
 
-	.label {
-		display: inline-block;
-		position: relative;
-		font-size: $frost-font-size-1;
-		color: $frost-color-grey-5;
-		@include user-select(none);
-	}
+  .label {
+    display: inline-block;
+    position: relative;
+    font-size: $frost-font-size-1;
+    color: $frost-color-grey-5;
+    @include user-select(none);
+  }
 }

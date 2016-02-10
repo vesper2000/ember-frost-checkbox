@@ -1,6 +1,6 @@
 {{one-way-input
     type='checkbox'
-    id=(concat id '_input')
+    id=inputId
     class='input'
     checked=isChecked
     disabled=disabled
@@ -14,3 +14,4 @@
     <polygon xmlns='http://www.w3.org/2000/svg'  fill='%23009EEF' points='14.9,25.4 12.4,22.9 26.2,9.4 28.7,12.1'/>
   </svg>
 </label>
+<label for={{inputId}} class='label'>{{yield}}</label>
