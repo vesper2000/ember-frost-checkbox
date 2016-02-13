@@ -1,6 +1,11 @@
-# [frost-checkbox](https://bitbucket.ciena.com/projects/bp_frost/repos/frost-checkbox)
+[ci-img]: https://img.shields.io/travis/ciena-frost/ember-frost-checkbox.svg "Travis CI Build Status"
+[ci-url]: https://travis-ci.org/ciena-frost/ember-frost-checkbox
+[cov-img]: https://img.shields.io/coveralls/ciena-frost/ember-frost-checkbox.svg "Coveralls Code Coverage"
+[cov-url]: https://coveralls.io/github/ciena-frost/ember-frost-checkbox
+[npm-img]: https://img.shields.io/npm/v/ember-frost-checkbox.svg "NPM Version"
+[npm-url]: https://www.npmjs.com/package/ember-frost-checkbox
 
-[![Build Status](http://teamcity.ciena.com/app/rest/builds/buildType:(id:BluePlanet_Frost_FrostCheckbox)/statusIcon)](http://teamcity.ciena.com/viewType.html?buildTypeId=BluePlanet_Frost_FrostCheckbox)
+# frost-checkbox
 
 This README outlines the details of collaborating on this Ember addon.
 
