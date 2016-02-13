@@ -26,7 +26,7 @@
   }
 
   .label.label:hover::before{
-    background-color: $frost-color__hover_blue;  //FIXME Not $frost-color-x convention
+    background-color: $frost-color-blue-2;  //FIXME Not $frost-color-x convention
   }
 
   svg {
@@ -46,7 +46,7 @@
   .label {
     display: inline-block;
     position: relative;
-    font-size: $frost-font-size-1;
+    font-size: $frost-font-s;
     color: $frost-color-grey-5;
     @include user-select(none);
   }
