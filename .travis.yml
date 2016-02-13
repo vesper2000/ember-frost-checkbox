@@ -1,0 +1,42 @@
+language: node_js
+node_js:
+- '5.3'
+sudo: false
+branches:
+  except:
+  - /^v[0-9\.]+/
+before_install:
+- npm install -g coveralls pr-bumper bower
+- pr-bumper check
+install:
+- npm install
+- bower install
+after_success:
+- sed -i -- 's/SF:my-addon-name\/\(.*\)/SF:addon\/\1.js/' coverage/lcov.info && rm
+  -f coverage/lcov.info--
+- cat coverage/lcov.info | coveralls
+env:
+  matrix:
+  - CXX=g++-4.8
+  global:
+    secure: rqYbIKe5J78eP4aYhni9WsRPz0i3n/sGyYfonAj3Hf0LBC2Q+QieomI2qtvVBK8s5P8f4S+asypEjui2e+GdrdMVd54Wj4NufcYsy6jvd/IFfTj3sfYqGY+Csi+QoilBHzf78tDCNIxJqO3cnOKC7mLWouhXlSvz0YNMy70aUIra07VLvPkE54l4nfG/9CKq2gtszX50yYIDjaX7Pj+VXuO0gupVfrtwIxBYPkYvIfkysEUo6AqhCideboUctTC+J2v662mlck9t/7EeP1VzvqNRd85tWOWwKjiDkmThldLWithLlB3L59JKv/DxAMVfprLXPLnG69yy/lBrWBX4JUbAn9cR0vWpHohXhVvs+ztPKUT7RbQ6tgJJUI0dp+mZ8MRtJccwwnlIHUQMiyPXVsGLuKIsVHFLM9pfoP7TJ8tsusJRnq/pOzfa2sPA0Y3AxrPsRh/wltbjJVvhvFfzO88v9whgEr89QfEpxmxs6C6y0D7AkpQbusHD709qZQGq6i/zKvqQwHWYTNJRO6B3tC/QAGfTrUprkSJsA9ONyFfIcO1dunZsqDdJqflMqoLekaqGrf29OBOO3cAGQjjnkXENwCy6cRtOVnlDgVQhbD7vBZcS5bcSTEBXDSwP6Pdx9tkuK7TVkWNOdQOkUCrDwIrjlBHFSQj9i17fClA66zo=
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+before_deploy:
+- pr-bumper bump
+deploy:
+  provider: npm
+  email: npm.ciena@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: t/g7HZDFToPWvNhiuB/Oye6q1u+b9QNsqjfxpQ/p5l/IG+gQEXGKs/pYiEB3jElQygLg0fG5BeSrPbRyyrBCFXLhRSUosR6+kYcdFfDig1N9V2EFfXGyREHrzkvHZtqZd2BvQFv5EgpUksv5KTzadhtm2oHcSAfVtUTCo0ZbxgRpdMM9++O3oH5TOSojv//9lWa18ybjr8ut1bCg39P8C/O+MQWRJAtvhfDkSJN04EJ56EaTHh1Ksko08gCQcfS3IH2Zs3GEGiMmVw79ifgvaBP0SpNmtXQVKl6ACyxRpzoLKfjBct+Ade30RES+ycaG17yaCdsQ+qGgub7bax3rs9NPd6jHdud+EeIRpcUKzXb4EkGPdLb7EsK+dmDk1Ikxt5h2w+yFD9gY6wVkxscsc6Z8lwVQZ4Jc3xBY5GKRKLrLVQYxpacrhX6r3HUU5a1L+ROXME59i1hxqP145BV9iGZLK6d53cssWJVFf1Hk1dOi82CYi1uZnh+IEDtcFGQ0m5uYdyQKb+0F58Jlh/0ySyGqoQPFN0CCUv52yzRHnZECoNqNUmy4LvcwpEDezTLcoJ66PhScfJeiCtMNsmfyjJQRRm6XR8meKD2qQHOpVVkJh9u57JrFzfq0jSBONu9c9VVM49cW+eRX8zLUzQikc0hotXhjvQ+vTOKtsxq33L0=
+  on:
+    branch: master
+    tags: false
+notifications:
+  slack:
+    secure: BxbKJ6YKQcT4Dl+2jc/GpwJVi5VGPd7LHh8grmnkEWpLlHseaifTz1LPLI9OdOLJh2v8tmnasSkgZSng7qwxsMJJgU1zUwIuYCCp8na2GbYmI6w28HaYrjfjVB0F//DPpVQUnGVEXxhKnGv81HgSRUVZEr/F2vYTHEjiddBn5jxaxvg6lYb8BtCZ6UsMdXP7k2v6bGjPI2wBUhuBUrsHZpkWirS3Rox3crluFvfwQLyhvr5jIimp6nqf5F7WCsaVGvAu8uU7vXBO8p78iS4ZDHjqpZa7fSqib//xMRIf3jJpC/Q/kplSPH1Ki5mL+9/Dc9bkuZXgKoTltSytumY4OfMeN4Xn+GsbPQoRBBIzbvLALSfNBMdz3mM4rsXGMZt+b9wPdfctoxOMFuQQiJwJyiS8Mud2MzlPBBeDtQ5FuEBTMD0yZqjVR+T5KyLv8mbuU8ntcIkKcjpukIdbInJ58FC3DACK0l50ro5WNRdFVjctbb7+lwoOkOgCEiN5VUnNMNC23T+5UIREn0gybvEiu/FGl7aqYuoH+hx+Ln/9XbmdVmoGmeXnyP6i0juk4bp5GEHfMF6R5/Gotpgrbc+jMus4NNX1qFYirEYojVasWyo3DwX/XjJkOZiYvZ4yAMjVlTvIE/tA/cCgzvg7r4Zjov8MyDLFtn0Dp82VvRrWxO8=
