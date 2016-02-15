@@ -5,6 +5,8 @@
 [npm-img]: https://img.shields.io/npm/v/ember-frost-checkbox.svg "NPM Version"
 [npm-url]: https://www.npmjs.com/package/ember-frost-checkbox
 
+[![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
+
 # frost-checkbox
 
 This README outlines the details of collaborating on this Ember addon.
