@@ -3,9 +3,9 @@
   position: relative;
 
   .input {
-      position: absolute;
-      top: 5px;
-      left: 5px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
   }
 
   .input:focus + .label::before {
@@ -25,7 +25,7 @@
     content: "";
   }
 
-  .label.label:hover::before{
+  .label.label:hover::before {
     background-color: $frost-color-blue-2;  //FIXME Not $frost-color-x convention
   }
 
@@ -38,7 +38,7 @@
     fill: $frost-color-blue-1;
     left: 2px;
   }
-  
+
   .input:checked + .label svg {
     visibility: visible;
   }
@@ -49,5 +49,6 @@
     font-size: $frost-font-s;
     color: $frost-color-grey-5;
     @include user-select(none);
+    cursor: pointer;
   }
 }
