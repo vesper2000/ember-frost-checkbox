@@ -8,7 +8,6 @@ module.exports = function (defaults) {
     },
     sassOptions: {
       includePaths: [
-        'bower_components/bourbon/app/assets/stylesheets',
         'node_modules/ember-frost-css-core/scss',
         'node_modules/ember-frost-theme/scss'
       ]
