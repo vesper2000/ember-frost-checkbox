@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-checkbox",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Frost framework checkbox component",
   "directories": {
     "doc": "doc",
