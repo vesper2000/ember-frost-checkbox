@@ -1,7 +1,7 @@
 .frost-checkbox {
   display: inline-block;
   position: relative;
-
+  
   .input[type=checkbox] {
       position: absolute;
       top: 2px;
@@ -26,7 +26,7 @@
     content: "";
   }
 
-  .label.label:hover::before{
+  .label.label:hover::before {
     background-color: $frost-color-blue-2;  //FIXME Not $frost-color-x convention
   }
 
@@ -39,7 +39,7 @@
     left: 0px;
     fill: $frost-color-blue-1;
   }
-  
+
   .input:checked + .label svg {
     visibility: visible;
   }
@@ -50,5 +50,6 @@
     font-size: $frost-font-s;
     color: $frost-color-grey-5;
     user-select: none;
+    cursor: pointer;
   }
 }
