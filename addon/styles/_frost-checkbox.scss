@@ -1,12 +1,13 @@
 .frost-checkbox {
   display: inline-block;
   position: relative;
-  
+
   .input[type=checkbox] {
       position: absolute;
       top: 2px;
       left: 2px;
       outline: none;
+      display: none;
   }
 
   .input:focus + .label::before {
