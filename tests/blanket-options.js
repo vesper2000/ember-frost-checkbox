@@ -1,25 +1,23 @@
 /* globals blanket, module */
 
 var options = {
-  modulePrefix: 'frost-checkbox',
-  filter: '//.*frost-checkbox/.*/',
+  modulePrefix: 'ember-frost-checkbox',
+  filter: '//.*ember-frost-checkbox/.*/',
   antifilter: '//.*(tests|template).*/',
   loaderExclusions: [],
   enableCoverage: true,
   cliOptions: {
-    jsonOptions: {
-      outputFile: 'coverage/coverage.json'
-    },
-    teamcityOptions: {
-      outputFile: 'coverage/teamcity.txt'
-    },
+    reporters: ['lcov'],
+    autostart: true,
     lcovOptions: {
-      outputFile: 'coverage/lcov.info'
-    },
-    reporters: ['teamcity', 'json', 'lcov'],
-    autostart: true
+      outputFile: 'coverage/lcov.info',
+      renamer: function (fileName) {
+        return fileName.replace('ember-frost-checkbox', 'addon') + '.js'
+      }
+    }
   }
 }
+
 if (typeof exports === 'undefined') {
   blanket.options(options)
 } else {
