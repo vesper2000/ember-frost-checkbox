@@ -39,7 +39,10 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/pages/NMS_FROST/frost-checkbox/gh-pages/browse'
+    ENV.baseURL = '/ember-frost-checkbox'
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
   }
 
   return ENV
