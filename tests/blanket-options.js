@@ -1,8 +1,8 @@
 /* globals blanket, module */
 
 var options = {
-  modulePrefix: 'frost-checkbox',
-  filter: '//.*frost-checkbox/.*/',
+  modulePrefix: 'ember-frost-checkbox',
+  filter: '//.*ember-frost-checkbox/.*/',
   antifilter: '//.*(tests|template).*/',
   loaderExclusions: [],
   enableCoverage: true,
