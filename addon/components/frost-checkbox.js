@@ -7,7 +7,8 @@ export default Ember.Component.extend({
   classNames: ['frost-checkbox'],
 
   didInitAttrs () {
-    this.set('isChecked', this.attrs.checked)
+    const checked = this.attrs ? this.attrs.checked : false
+    this.set('isChecked', checked)
   },
 
   didInsertElement () {

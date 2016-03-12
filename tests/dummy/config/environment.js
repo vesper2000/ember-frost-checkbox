@@ -40,6 +40,9 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     ENV.baseURL = '/ember-frost-checkbox'
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
   }
 
   return ENV

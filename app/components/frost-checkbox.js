@@ -1,1 +1,1 @@
-export { default } from 'frost-checkbox/components/frost-checkbox'
+export { default } from 'ember-frost-checkbox/components/frost-checkbox'
