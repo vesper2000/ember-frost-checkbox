@@ -1,5 +1,5 @@
 import Ember from 'ember'
-import layout from './template'
+import layout from '../templates/components/frost-checkbox'
 import _ from 'lodash/lodash'
 
 export default Ember.Component.extend({
@@ -27,6 +27,7 @@ export default Ember.Component.extend({
   actions: {
     input () {
       let id = this.get('value')
+
       if (_.isFunction(this.attrs['on-input'])) {
         this.attrs['on-input']({
           id: Ember.isEmpty(id) ? this.get('id') : id,
