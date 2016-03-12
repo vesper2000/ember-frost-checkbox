@@ -1,17 +1,17 @@
 {
   "name": "ember-frost-checkbox",
   "dependencies": {
-    "ember": "~2.3.0",
+    "ember": "2.4.2",
     "ember-cli-shims": "^0.1.0",
     "ember-cli-test-loader": "^0.2.2",
     "ember-inflector": "1.3.1",
-    "ember-mocha": "~0.8.11",
+    "ember-mocha": "0.8.11",
     "Faker": "3.0.1",
-    "lodash": "~4.5.0",
-    "pretender": "~0.12.0",
+    "lodash": "3.10.1",
+    "pretender": "0.10.1"
   },
   "resolutions": {
-    "ember": "~2.3.0"
+    "ember": "2.4.2"
   },
   "devDependencies": {
     "blanket": "5e94fc30f2e694bb5c3718ddcbf60d467f4b4d26"
