@@ -2,13 +2,9 @@ import Ember from 'ember'
 
 export default Ember.Controller.extend({
   actions: {
-    checked (attrs) {
-      this.notifications.addNotification({
-        message: '' + attrs.value,
-        type: 'success',
-        autoClear: true,
-        clearDuration: 2000
-      })
+
+    toggleError () {
+      this.toggleProperty('error')
     },
 
     value (attrs) {
@@ -18,10 +14,6 @@ export default Ember.Controller.extend({
         autoClear: true,
         clearDuration: 2000
       })
-    },
-
-    tabSelected (tab) {
-      this.set('selectedTab', tab)
     }
   }
 })

@@ -1,5 +1,5 @@
 import Ember from 'ember'
-import layout from './template'
+import layout from '../templates/components/frost-checkbox'
 import _ from 'lodash/lodash'
 
 export default Ember.Component.extend({
@@ -7,7 +7,8 @@ export default Ember.Component.extend({
   classNames: ['frost-checkbox'],
 
   didInitAttrs () {
-    this.set('isChecked', this.attrs.checked)
+    const checked = this.attrs ? this.attrs.checked : false
+    this.set('isChecked', checked)
   },
 
   didInsertElement () {
@@ -20,12 +21,13 @@ export default Ember.Component.extend({
 
   inputId: Ember.computed('id', function () {
     const id = this.get('id') || this.elementId
-    return `${ id }_input`
+    return `${id}_input`
   }),
 
   actions: {
     input () {
       let id = this.get('value')
+
       if (_.isFunction(this.attrs['on-input'])) {
         this.attrs['on-input']({
           id: Ember.isEmpty(id) ? this.get('id') : id,
